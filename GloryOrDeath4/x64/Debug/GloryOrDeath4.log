@@ -1,2 +1,3 @@
-﻿  Main.cpp
-  GloryOrDeath4.vcxproj -> c:\users\aaron\documents\visual studio 2015\Projects\GloryOrDeath4\x64\Debug\GloryOrDeath4.exe
+﻿  Parser.cpp
+c:\users\aaron\documents\github\gloryordeath4\gloryordeath4\animation.h(18): warning C4018: '>=': signed/unsigned mismatch
+  GloryOrDeath4.vcxproj -> C:\Users\Aaron\Documents\GitHub\GloryOrDeath4\x64\Debug\GloryOrDeath4.exe
