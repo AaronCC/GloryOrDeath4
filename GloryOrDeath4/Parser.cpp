@@ -14,7 +14,7 @@ std::map<std::string, std::vector<Animation>> Parser::parseAnims(SpriteManager *
 	std::map<std::string, std::vector<Animation>> anims;
 	std::stringstream stream;
 	unsigned int numAnims;
-	std::string name, animName;	
+	std::string name, animName;
 	sf::IntRect sourceRect;
 	sf::Sprite *spriteSheet = nullptr;
 	float mpf;
@@ -33,9 +33,9 @@ std::map<std::string, std::vector<Animation>> Parser::parseAnims(SpriteManager *
 				>> mpf >> frames.x >> frames.y;
 			if (t_sm->loadSprite(animName + ".png"))
 				spriteSheet = t_sm->getSprite(animName + ".png");
-			anims[name].push_back({ animName, spriteSheet, sourceRect, mpf, frames });
+			anims[name].push_back({ animName, spriteSheet, sourceRect, mpf, frames, i });
+			}
 		}
+		return anims;
 	}
-	return anims;
-}
 
