@@ -10,10 +10,19 @@ public:
 	WindowManager();
 	~WindowManager();
 
+	enum GAME_STATE
+	{
+		LOADING = 0,
+		MENU = 1,
+		GAME = 2
+	};
+	GAME_STATE state;
+
 	sf::RenderWindow& getWindow() const;
 	
 	void renderFrame();
-	void genObj(std::string name);
+	GameObject* genObj(std::string name);
+	void setPlayer(GameObject * t_player);
 	bool setWindow(sf::RenderWindow* t_window, SpriteManager* t_sm);
 private:
 	GameObject* m_player;

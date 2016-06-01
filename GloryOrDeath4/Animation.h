@@ -6,13 +6,23 @@ class Animation {
 public:
 	Animation() {}
 	Animation(std::string t_name, sf::Sprite * t_spriteSheet, sf::IntRect t_sourceRect
-		, float t_mpf, vec2uint t_frames)
-		: name(t_name), spriteSheet(t_spriteSheet), sourceRect(t_sourceRect), mpf(t_mpf), frames(t_frames), currentFrame(0, 0) {}
+		, float t_mpf, vec2uint t_frames, int t_bounds)
+		: name(t_name), spriteSheet(t_spriteSheet), sourceRect(t_sourceRect), mpf(t_mpf), frames(t_frames), currentFrame(0, t_bounds), bounds(t_bounds) {}
 
 	~Animation() {}
+
+	enum GAME_STATE
+	{
+		LOADING = 0,
+		MENU = 1,
+		GAME = 2
+	};
+	GAME_STATE state;
+
 	std::string name;
 	sf::Sprite *spriteSheet;
 	float mpf;
+	int bounds;
 	vec2uint frames;
 	vec2uint currentFrame;
 
@@ -22,8 +32,8 @@ public:
 		{
 			currentFrame.x = 0;
 
-			if (currentFrame.y >= frames.y)
-				currentFrame.y = 0;
+			if (currentFrame.y >= bounds + frames.y)
+				currentFrame.y = bounds;
 			else
 				currentFrame.y++;
 		}

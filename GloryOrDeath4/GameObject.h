@@ -20,8 +20,9 @@ public:
 	GameObject(std::string t_name, std::vector<Animation> t_anim);
 	~GameObject();
 	
-	void Update(float t_dt);
-	void Draw(sf::RenderWindow* t_window, float t_dt);
+	void update(float t_dt);
+	void draw(sf::RenderWindow* t_window, float t_dt);
+	void setAnim(int index);
 	std::string m_name;
 private:
 	float m_locTime;

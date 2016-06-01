@@ -11,8 +11,6 @@ InputManager::~InputManager()
 
 void InputManager::resolveEvent(sf::RenderWindow* t_window, GameObject* t_player, sf::Event t_Event)
 {
-	while (t_window->pollEvent(t_Event))
-	{
 		switch (t_Event.type)
 		{
 		case sf::Event::Closed:
@@ -21,9 +19,21 @@ void InputManager::resolveEvent(sf::RenderWindow* t_window, GameObject* t_player
 
 			// key pressed
 		case sf::Event::KeyPressed:
+			if (t_Event.key.code == sf::Keyboard::Up)
+			{
+				t_player->setAnim(0);
+			}
+			if (t_Event.key.code == sf::Keyboard::Left)
+			{
+				t_player->setAnim(1);
+			}
+			if (t_Event.key.code == sf::Keyboard::Down)
+			{
+				t_player->setAnim(2);
+			}
 			if (t_Event.key.code == sf::Keyboard::Right)
 			{
-
+				t_player->setAnim(3);
 			}
 				break;
 
@@ -31,7 +41,7 @@ void InputManager::resolveEvent(sf::RenderWindow* t_window, GameObject* t_player
 		default:
 			break;
 		}
-	}
+	
 }
 bool InputManager::init()
 {

@@ -1,10 +1,10 @@
-﻿  Application.cpp
+﻿  InputManager.cpp
   Generating Code...
   Skipping... (no relevant changes detected)
   WindowManager.cpp
   SpriteManager.cpp
   Parser.cpp
   Main.cpp
-  InputManager.cpp
   GameObject.cpp
+  Application.cpp
   GloryOrDeath4.vcxproj -> C:\Users\Aaron\Documents\GitHub\GloryOrDeath4\x64\Debug\GloryOrDeath4.exe

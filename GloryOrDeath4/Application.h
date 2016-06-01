@@ -4,12 +4,21 @@
 #include "InputManager.h"
 #include "Parser.h"
 #include "GameObject.h"
+#include <thread>
 class Application
 {
 public:
 	Application()
 		: m_windowManager() {}
 	~Application();
+
+	enum GAME_STATE
+	{
+		LOADING = 0,
+		MENU = 1,
+		GAME = 2
+	};
+	GAME_STATE state;
 
 	bool init();
 	void mainLoop();
