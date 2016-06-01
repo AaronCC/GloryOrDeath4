@@ -11,9 +11,16 @@ SpriteManager::~SpriteManager()
 {
 }
 
-bool SpriteManager::init(std::map<std::string, std::vector<Animation>> t_anims)
+MenuButton SpriteManager::getButton(std::string t_name)
+{
+	return m_buttons[t_name];
+}
+
+bool SpriteManager::init(std::map<std::string, std::vector<Animation>> t_anims,std::map<std::string,Menu> t_menus, std::map<std::string, MenuButton> t_buttons)
 {
 	m_animations = t_anims;
+	m_menus = t_menus;
+	m_buttons = t_buttons;
 	/*for (std::map < std::string, std::vector<Animation>>::iterator it = t_anims.begin(); it != t_anims.end(); ++it)
 	{
 		m_animations.insert(std::pair<std::string,std::vector<Animation>>(it-first, it->second));

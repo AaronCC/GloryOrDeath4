@@ -4,6 +4,7 @@
 #include "InputManager.h"
 #include "Parser.h"
 #include "GameObject.h"
+#include "ThreadManager.h"
 #include <thread>
 class Application
 {
@@ -27,7 +28,9 @@ private:
 	sf::Sprite(*get)(std::string);
 	WindowManager m_windowManager;
 	SpriteManager m_spriteManager;
+	ThreadManager m_threadManager;
 	Parser m_parser;
 	sf::RenderWindow m_mainWindow;
+
 };
 

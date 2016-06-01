@@ -156,6 +156,8 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="MenuButton.cpp" />
     <ClCompile Include="Parser.cpp" />
     <ClCompile Include="SpriteManager.cpp" />
     <ClCompile Include="ThreadManager.cpp" />
@@ -166,6 +168,8 @@
     <ClInclude Include="Application.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="InputManager.h" />
+    <ClInclude Include="Menu.h" />
+    <ClInclude Include="MenuButton.h" />
     <ClInclude Include="Parser.h" />
     <ClInclude Include="SpriteManager.h" />
     <ClInclude Include="ThreadManager.h" />

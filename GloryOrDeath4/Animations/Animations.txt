@@ -1,5 +1,5 @@
 spritesheet 4 
-walkup 64 64 30 8 0
-walkleft 64 64 30 8 0
-walkdown 64 64 30 8 0
-walkright 64 64 30 8 0
+walkup 64 64 20 8 0
+walkleft 64 64 20 8 0
+walkdown 64 64 20 8 0
+walkright 64 64 20 8 0
