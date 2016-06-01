@@ -9,7 +9,6 @@ WindowManager::~WindowManager()
 
 sf::RenderWindow& WindowManager::getWindow() const
 {
-	
 	return *m_mainWindow;
 }
 

@@ -10,6 +10,15 @@ public:
 		: name(t_name), spriteSheet(t_spriteSheet), sourceRect(t_sourceRect), mpf(t_mpf), frames(t_frames), currentFrame(0, t_bounds), bounds(t_bounds) {}
 
 	~Animation() {}
+
+	enum GAME_STATE
+	{
+		LOADING = 0,
+		MENU = 1,
+		GAME = 2
+	};
+	GAME_STATE state;
+
 	std::string name;
 	sf::Sprite *spriteSheet;
 	float mpf;

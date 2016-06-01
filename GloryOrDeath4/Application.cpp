@@ -8,6 +8,7 @@ Application::~Application()
 
 bool Application::init()
 {
+	state = LOADING;
 	reloadWindow();
 	if (!m_spriteManager.init(m_parser.parseAnims(&m_spriteManager)))
 		return false;

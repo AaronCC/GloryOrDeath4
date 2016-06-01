@@ -10,6 +10,14 @@ public:
 	WindowManager();
 	~WindowManager();
 
+	enum GAME_STATE
+	{
+		LOADING = 0,
+		MENU = 1,
+		GAME = 2
+	};
+	GAME_STATE state;
+
 	sf::RenderWindow& getWindow() const;
 	
 	void renderFrame();
