@@ -7,7 +7,7 @@ public:
 	Animation() {}
 	Animation(std::string t_name, sf::Sprite * t_spriteSheet, sf::IntRect t_sourceRect
 		, float t_mpf, vec2uint t_frames, int t_bounds)
-		: name(t_name), spriteSheet(t_spriteSheet), sourceRect(t_sourceRect), mpf(t_mpf), frames(t_frames), currentFrame(0, 0), bounds(t_bounds) {}
+		: name(t_name), spriteSheet(t_spriteSheet), sourceRect(t_sourceRect), mpf(t_mpf), frames(t_frames), currentFrame(0, t_bounds), bounds(t_bounds) {}
 
 	~Animation() {}
 	std::string name;

@@ -31,8 +31,8 @@ std::map<std::string, std::vector<Animation>> Parser::parseAnims(SpriteManager *
 			stream << line;
 			stream >> animName >> sourceRect.width >> sourceRect.height
 				>> mpf >> frames.x >> frames.y;
-			if (t_sm->loadSprite(animName + ".png"))
-				spriteSheet = t_sm->getSprite(animName + ".png");
+			if (t_sm->loadSprite(name + ".png"))
+				spriteSheet = t_sm->getSprite(name + ".png");
 			anims[name].push_back({ animName, spriteSheet, sourceRect, mpf, frames, i });
 			}
 		}

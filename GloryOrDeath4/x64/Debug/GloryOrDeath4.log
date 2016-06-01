@@ -1,3 +1,10 @@
-﻿  Parser.cpp
-c:\users\aaron\documents\github\gloryordeath4\gloryordeath4\parser.cpp(26): warning C4018: '<': signed/unsigned mismatch
+﻿  InputManager.cpp
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  WindowManager.cpp
+  SpriteManager.cpp
+  Parser.cpp
+  Main.cpp
+  GameObject.cpp
+  Application.cpp
   GloryOrDeath4.vcxproj -> C:\Users\Aaron\Documents\GitHub\GloryOrDeath4\x64\Debug\GloryOrDeath4.exe

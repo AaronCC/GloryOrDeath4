@@ -13,7 +13,8 @@ bool Application::init()
 		return false;
 	if (!m_windowManager.setWindow(&m_mainWindow, &m_spriteManager))
 		return false;
-	m_windowManager.genObj("Player");
+	m_windowManager.setPlayer(m_windowManager.genObj("spritesheet"));
+
 	return true;
 }
 

@@ -13,7 +13,8 @@ public:
 	sf::RenderWindow& getWindow() const;
 	
 	void renderFrame();
-	void genObj(std::string name);
+	GameObject* genObj(std::string name);
+	void setPlayer(GameObject * t_player);
 	bool setWindow(sf::RenderWindow* t_window, SpriteManager* t_sm);
 private:
 	GameObject* m_player;
