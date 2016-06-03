@@ -19,7 +19,7 @@ public:
 		MENU = 1,
 		GAME = 2
 	};
-	GAME_STATE state;
+	GAME_STATE m_state;
 
 	bool init();
 	void mainLoop();

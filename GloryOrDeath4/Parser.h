@@ -17,6 +17,8 @@ public:
 
 	std::map<std::string, std::vector<Animation>> parseAnims(SpriteManager* t_sm);
 	std::map<std::string, Menu> parseMenus(SpriteManager * t_sm);
+	std::map<std::string, std::pair <std::string, std::vector<std::string>>> parseMenuData(SpriteManager *t_sm);
+	std::map<std::string, std::string> parseButtonData(SpriteManager *t_sm);
 	std::map<std::string, MenuButton> parseButtons(SpriteManager * t_sm);
 };
 

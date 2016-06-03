@@ -1,2 +1,2 @@
-main 800 800 1
+mainmenu 800 800 1
 start 50 50

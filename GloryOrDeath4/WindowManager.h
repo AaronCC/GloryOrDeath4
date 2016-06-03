@@ -4,6 +4,7 @@
 #include "SpriteManager.h"
 #include "GameObject.h"
 #include "InputManager.h"
+#include <stack>
 class WindowManager
 {
 public:
@@ -21,10 +22,17 @@ public:
 	sf::RenderWindow& getWindow() const;
 	
 	void renderFrame();
+	void renderMenu();
+	void pollEvents();
 	GameObject* genObj(std::string name);
+	Menu* genMenu(std::string t_name);
+	MenuButton genButton(std::string t_name);
 	void setPlayer(GameObject * t_player);
+	void pushMenu(std::string t_name);
 	bool setWindow(sf::RenderWindow* t_window, SpriteManager* t_sm);
 private:
+	std::stack<Menu> m_menuStack;
+	std::vector<Menu> m_menus;
 	GameObject* m_player;
 	std::vector<GameObject> m_objects;
 	vec2f m_resolution;

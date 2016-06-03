@@ -3,3 +3,8 @@ walkup 64 64 20 8 0
 walkleft 64 64 20 8 0
 walkdown 64 64 20 8 0
 walkright 64 64 20 8 0
+mainmenu 1
+main 800 800 20 0 0
+start 2
+innactive 100 100 20 0 0
+active 100 100 20 0 0

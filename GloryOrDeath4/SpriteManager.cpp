@@ -13,28 +13,50 @@ SpriteManager::~SpriteManager()
 
 MenuButton SpriteManager::getButton(std::string t_name)
 {
-	return m_buttons[t_name];
+	if (m_buttons.count(t_name))
+		return m_buttons[t_name];
+	return MenuButton();
 }
 
-bool SpriteManager::init(std::map<std::string, std::vector<Animation>> t_anims,std::map<std::string,Menu> t_menus, std::map<std::string, MenuButton> t_buttons)
+Menu SpriteManager::getMenu(std::string t_name)
+{
+	if (m_menus.count(t_name))
+		return m_menus[t_name];
+	return Menu();
+}
+
+std::pair < std::string, std::vector<std::string>> SpriteManager::getMenuData(std::string t_name)
+{
+	if (m_menuData.count(t_name))
+		return m_menuData[t_name];
+}
+
+std::string SpriteManager::getButtonData(std::string t_name)
+{
+	if (m_buttonData.count(t_name))
+		return m_buttonData[t_name];
+}
+
+bool SpriteManager::init(std::map<std::string, std::string> t_buttons,
+	std::map<std::string, std::vector<Animation>> t_anims,
+	std::map<std::string, std::pair<std::string, std::vector<std::string>>> t_menus)
 {
 	m_animations = t_anims;
-	m_menus = t_menus;
-	m_buttons = t_buttons;
-	/*for (std::map < std::string, std::vector<Animation>>::iterator it = t_anims.begin(); it != t_anims.end(); ++it)
-	{
-		m_animations.insert(std::pair<std::string,std::vector<Animation>>(it-first, it->second));
-	}*/
+	m_buttonData = t_buttons;
+	m_menuData = t_menus;
 	return true;
-}	
+}
+
 
 sf::Sprite* SpriteManager::getSprite(std::string t_name)
 {
-	return &m_sprites[t_name];
+	if (m_sprites.count(t_name))
+		return &m_sprites[t_name];
 }
-std::vector<Animation>* SpriteManager::getAnims(std::string t_name)
+std::vector<Animation> SpriteManager::getAnims(std::string t_name)
 {
-	return &m_animations[t_name];
+	if (m_animations.count(t_name))
+		return m_animations[t_name];
 }
 bool SpriteManager::loadSprite(std::string t_name)
 {
@@ -57,3 +79,4 @@ bool SpriteManager::unloadSprite(std::string t_name)
 {
 	return false;
 }
+

@@ -2,29 +2,47 @@
 #include "WindowManager.h"
 
 
-Application::~Application()	
+Application::~Application()
 {
 }
 
 bool Application::init()
 {
-	state = LOADING;
+	m_state = LOADING;
+
 	reloadWindow();
+
 	std::cout << "Loading Assets..." << std::endl;
-	if (!m_spriteManager.init(m_parser.parseAnims(&m_spriteManager),m_parser.parseMenus(&m_spriteManager),m_parser.parseButtons(&m_spriteManager)))
+	if (!m_spriteManager.init(m_parser.parseButtonData(&m_spriteManager), m_parser.parseAnims(&m_spriteManager),m_parser.parseMenuData(&m_spriteManager)))
 		return false;
 	std::cout << "Initializing Window..." << std::endl;
 	if (!m_windowManager.setWindow(&m_mainWindow, &m_spriteManager))
 		return false;
 	m_windowManager.setPlayer(m_windowManager.genObj("spritesheet"));
+	m_windowManager.pushMenu("mainmenu");
+
+	m_state = MENU;
 	return true;
+
 }
 
 void Application::mainLoop()
 {
 	while (m_mainWindow.isOpen())
 	{
-		m_windowManager.renderFrame();
+		switch (m_state)
+		{
+		case LOADING:
+			break;
+		case MENU:
+			m_windowManager.renderMenu();
+			break;
+		case GAME:
+			m_windowManager.renderFrame();
+			break;
+		default:
+			break;
+		}
 	}
 }
 

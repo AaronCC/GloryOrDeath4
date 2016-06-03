@@ -4,10 +4,12 @@ c:\users\aaron\documents\github\gloryordeath4\gloryordeath4\x64\debug\applicatio
 c:\users\aaron\documents\github\gloryordeath4\gloryordeath4\x64\debug\gameobject.obj
 c:\users\aaron\documents\github\gloryordeath4\gloryordeath4\x64\debug\inputmanager.obj
 c:\users\aaron\documents\github\gloryordeath4\gloryordeath4\x64\debug\main.obj
-c:\users\aaron\documents\github\gloryordeath4\gloryordeath4\x64\debug\windowmanager.obj
-c:\users\aaron\documents\github\gloryordeath4\gloryordeath4\x64\debug\spritemanager.obj
+c:\users\aaron\documents\github\gloryordeath4\gloryordeath4\x64\debug\menu.obj
+c:\users\aaron\documents\github\gloryordeath4\gloryordeath4\x64\debug\menubutton.obj
 c:\users\aaron\documents\github\gloryordeath4\gloryordeath4\x64\debug\parser.obj
+c:\users\aaron\documents\github\gloryordeath4\gloryordeath4\x64\debug\spritemanager.obj
 c:\users\aaron\documents\github\gloryordeath4\gloryordeath4\x64\debug\threadmanager.obj
+c:\users\aaron\documents\github\gloryordeath4\gloryordeath4\x64\debug\windowmanager.obj
 c:\users\aaron\documents\github\gloryordeath4\x64\debug\gloryordeath4.ilk
 c:\users\aaron\documents\github\gloryordeath4\x64\debug\gloryordeath4.exe
 c:\users\aaron\documents\github\gloryordeath4\x64\debug\gloryordeath4.pdb
