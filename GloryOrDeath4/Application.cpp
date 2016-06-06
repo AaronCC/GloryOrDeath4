@@ -30,19 +30,7 @@ void Application::mainLoop()
 {
 	while (m_mainWindow.isOpen())
 	{
-		switch (m_state)
-		{
-		case LOADING:
-			break;
-		case MENU:
-			m_state = (GAME_STATE)m_windowManager.renderMenu();
-			break;
-		case GAME:
-			m_state = (GAME_STATE)m_windowManager.renderFrame();
-			break;
-		default:
-			break;
-		}
+		m_windowManager.renderFrame();
 	}
 }
 

@@ -9,7 +9,7 @@ InputManager::~InputManager()
 {
 }
 
-int InputManager::resolveGameEvent(sf::RenderWindow* t_window, GameObject* t_player, sf::Event t_event)
+void InputManager::resolveGameEvent(sf::RenderWindow* t_window, GameObject* t_player, sf::Event t_event)
 {
 	switch (t_event.type)
 	{
@@ -41,19 +41,17 @@ int InputManager::resolveGameEvent(sf::RenderWindow* t_window, GameObject* t_pla
 	default:
 		break;
 	}
-	return 2;
 }
-int InputManager::resolveMenuEvent(sf::RenderWindow * t_window, Menu t_menu, sf::Event t_event)
+void InputManager::resolveMenuEvent(sf::RenderWindow * t_window, Menu t_menu, sf::Event t_event)
 {
 	switch (t_event.type)
 	{
 	case sf::Event::MouseButtonPressed:
-		return t_menu.clickEvent({ t_event.mouseButton.x, t_event.mouseButton.y, 10, 10 });
+		t_menu.clickEvent({ t_event.mouseButton.x, t_event.mouseButton.y, 10, 10 });
 		break;
 	default:
 		break;
 	}
-	return 1;
 }
 bool InputManager::init()
 {

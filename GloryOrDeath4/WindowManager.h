@@ -11,18 +11,10 @@ public:
 	WindowManager();
 	~WindowManager();
 
-	enum GAME_STATE
-	{
-		LOADING = 0,
-		MENU = 1,
-		GAME = 2
-	};
-	GAME_STATE state;
-
 	sf::RenderWindow& getWindow() const;
 	
-	int renderFrame();
-	int renderMenu();
+	void renderFrame();
+	void renderMenu();
 	GameObject* genObj(std::string name);
 	Menu* genMenu(std::string t_name);
 	MenuButton genButton(std::string t_name);
@@ -30,8 +22,8 @@ public:
 	void pushMenu(std::string t_name);
 	bool setWindow(sf::RenderWindow* t_window, SpriteManager* t_sm);
 private:
-	int pollGameEvents();
-	int pollMenuEvents();
+	void pollGameEvents();
+	void pollMenuEvents();
 	std::stack<Menu> m_menuStack;
 	std::vector<Menu> m_menus;
 	GameObject* m_player;

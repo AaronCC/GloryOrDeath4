@@ -20,7 +20,7 @@ void Menu::draw(sf::RenderWindow * t_window, float t_dt)
 	if (m_locTime > m_animation.mpf)
 	{
 		m_animation.spriteSheet->setTextureRect(m_animation.nextSource());
-		m_locTime = 0; 
+		m_locTime = 0;
 	}
 	t_window->draw(*m_animation.spriteSheet);
 }
@@ -35,13 +35,12 @@ void Menu::init(std::vector<std::vector<Animation>>t_buttonAnims)
 	}
 }
 
-int Menu::clickEvent(sf::IntRect t_mouseBox)
+void Menu::clickEvent(sf::IntRect t_mouseBox)
 {
 	for (int i = 0; i < m_buttons.size(); i++)
 	{
 		if (m_buttons[i].m_region.intersects(t_mouseBox))
-			return m_buttons[i].clickEvent();
+			stateFunc(m_buttons[i].clickEvent());
 	}
-	return 1;
 }
 
