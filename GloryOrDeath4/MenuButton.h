@@ -15,7 +15,7 @@ public:
 	void draw(sf::RenderWindow * t_window, float t_dt);
 	void init(std::vector<Animation> t_anims);
 	void setPosition(vec2f t_pos);
-
+	int clickEvent();
 	sf::IntRect m_region;
 	vec2f m_position;
 	std::string m_name;

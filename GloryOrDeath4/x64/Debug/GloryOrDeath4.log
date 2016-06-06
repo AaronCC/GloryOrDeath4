@@ -1,5 +1,2 @@
-﻿  WindowManager.cpp
-c:\users\aaron\documents\github\gloryordeath4\gloryordeath4\windowmanager.cpp(25): warning C4244: '=': conversion from 'sf::Int32' to 'float', possible loss of data
-c:\users\aaron\documents\github\gloryordeath4\gloryordeath4\windowmanager.cpp(39): warning C4244: '=': conversion from 'sf::Int32' to 'float', possible loss of data
-c:\users\aaron\documents\github\gloryordeath4\gloryordeath4\windowmanager.cpp(68): warning C4101: 'active': unreferenced local variable
+﻿  Application.cpp
   GloryOrDeath4.vcxproj -> C:\Users\Aaron\Documents\GitHub\GloryOrDeath4\x64\Debug\GloryOrDeath4.exe

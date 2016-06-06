@@ -13,6 +13,7 @@ public:
 	void update(float t_dt);
 	void draw(sf::RenderWindow * t_window, float t_dt);
 	void init(std::vector<std::vector<Animation>> t_buttonAnims);
+	int clickEvent(sf::IntRect t_mouseBox);
 	std::string m_name;
 	vec2ui m_size;
 	std::vector<MenuButton> m_buttons;

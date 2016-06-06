@@ -72,7 +72,6 @@ bool SpriteManager::loadSprite(std::string t_name)
 	if (m_sprites.count(t_name))
 		return true;
 	return false;
-
 }
 
 bool SpriteManager::unloadSprite(std::string t_name)

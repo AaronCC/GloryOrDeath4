@@ -12,9 +12,8 @@ sf::RenderWindow& WindowManager::getWindow() const
 	return *m_mainWindow;
 }
 
-void WindowManager::renderFrame()
+int WindowManager::renderFrame()
 {
-	pollEvents();
 	for (int i = 0; i < m_objects.size(); i++)
 	{
 		m_deltaTime = m_mainClock.getElapsedTime().asMilliseconds() - m_prevTime;
@@ -23,10 +22,10 @@ void WindowManager::renderFrame()
 	}
 	m_mainWindow->display();
 	m_prevTime = m_mainClock.getElapsedTime().asMilliseconds();
+	return pollGameEvents();
 }
-void WindowManager::renderMenu()
+int WindowManager::renderMenu()
 {
-	pollEvents();
 	if (m_menuStack.size() > 0)
 	{
 		m_deltaTime = m_mainClock.getElapsedTime().asMilliseconds() - m_prevTime;
@@ -37,15 +36,30 @@ void WindowManager::renderMenu()
 	}
 	m_mainWindow->display();
 	m_prevTime = m_mainClock.getElapsedTime().asMilliseconds();
+
+	return pollMenuEvents();
 }
-void WindowManager::pollEvents()
+int WindowManager::pollGameEvents()
 {
+	int state = 2;
 	m_mainWindow->clear();
 	sf::Event event;
 	while (getWindow().pollEvent(event))
 	{
-	m_inputManager.resolveEvent(m_mainWindow, m_player, event);
+		state = m_inputManager.resolveGameEvent(m_mainWindow, m_player, event);
 	}
+	return state;
+}
+int WindowManager::pollMenuEvents()
+{
+	int state = 1;
+	m_mainWindow->clear();
+	sf::Event event;
+	while (getWindow().pollEvent(event))
+	{
+		state = m_inputManager.resolveMenuEvent(m_mainWindow, m_menuStack.top(), event);
+	}
+	return state;
 }
 GameObject* WindowManager::genObj(std::string name)
 {

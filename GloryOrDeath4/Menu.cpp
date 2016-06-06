@@ -35,3 +35,13 @@ void Menu::init(std::vector<std::vector<Animation>>t_buttonAnims)
 	}
 }
 
+int Menu::clickEvent(sf::IntRect t_mouseBox)
+{
+	for (int i = 0; i < m_buttons.size(); i++)
+	{
+		if (m_buttons[i].m_region.intersects(t_mouseBox))
+			return m_buttons[i].clickEvent();
+	}
+	return 1;
+}
+

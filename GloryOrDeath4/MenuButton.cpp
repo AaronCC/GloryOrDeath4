@@ -48,3 +48,8 @@ void MenuButton::setPosition(vec2f t_pos)
 	m_region.left = t_pos.x;
 	m_region.top = t_pos.y;
 }
+
+int MenuButton::clickEvent()
+{
+	return 2;
+}

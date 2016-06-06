@@ -21,9 +21,8 @@ public:
 
 	sf::RenderWindow& getWindow() const;
 	
-	void renderFrame();
-	void renderMenu();
-	void pollEvents();
+	int renderFrame();
+	int renderMenu();
 	GameObject* genObj(std::string name);
 	Menu* genMenu(std::string t_name);
 	MenuButton genButton(std::string t_name);
@@ -31,6 +30,8 @@ public:
 	void pushMenu(std::string t_name);
 	bool setWindow(sf::RenderWindow* t_window, SpriteManager* t_sm);
 private:
+	int pollGameEvents();
+	int pollMenuEvents();
 	std::stack<Menu> m_menuStack;
 	std::vector<Menu> m_menus;
 	GameObject* m_player;
