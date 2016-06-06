@@ -40,7 +40,7 @@ void Menu::clickEvent(sf::IntRect t_mouseBox)
 	for (int i = 0; i < m_buttons.size(); i++)
 	{
 		if (m_buttons[i].m_region.intersects(t_mouseBox))
-			stateFunc(m_buttons[i].clickEvent());
+			(*m_buttFuncsPtr)[m_buttons[i].clickEvent()]();
 	}
 }
 

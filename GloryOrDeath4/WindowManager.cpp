@@ -9,6 +9,7 @@ namespace
 		GAME = 2
 	};
 	GAME_STATE state;
+
 }
 
 WindowManager::WindowManager()
@@ -56,9 +57,9 @@ void WindowManager::renderFrame()
 		break;
 	}
 }
-void changeState(int t_state)
+void changeState()
 {
-	state = (GAME_STATE)t_state;
+	state = GAME;
 }
 void WindowManager::renderMenu()
 {
@@ -116,7 +117,7 @@ Menu* WindowManager::genMenu(std::string t_name)
 			(menuSize.y * (position.y / 100.f)) - (buttons[buttons.size() - 1].m_region.height / 2) });
 		std::cout << "\t\t\t" << buttonData[i] << std::endl;
 	}
-	m_menuStack.push({ menuName, menuSize, buttons, m_spriteManager->getAnims(t_name), &changeState });
+	m_menuStack.push({ menuName, menuSize, buttons, m_spriteManager->getAnims(t_name), &m_buttFuncs });
 	return &m_menuStack.top();
 }
 MenuButton WindowManager::genButton(std::string t_name)
@@ -125,10 +126,11 @@ MenuButton WindowManager::genButton(std::string t_name)
 	std::stringstream stream;
 	sf::IntRect region;
 	bool active;
+	int funcId;
 	buttonData = m_spriteManager->getButtonData(t_name);
 	stream << buttonData;
-	stream >> name >> region.width >> region.height >> active;
-	MenuButton btn(name, region, active);
+	stream >> name >> region.width >> region.height >> active >> funcId;
+	MenuButton btn(name, region, active, funcId);
 	return btn;
 }
 void WindowManager::setPlayer(GameObject* t_player)
@@ -149,6 +151,7 @@ void WindowManager::pushMenu(std::string t_name)
 }
 bool WindowManager::setWindow(sf::RenderWindow * t_window, SpriteManager * t_sm)
 {
+	m_buttFuncs[0] = &changeState;
 	m_mainWindow = t_window;
 	if (m_mainWindow == nullptr)
 		return false;

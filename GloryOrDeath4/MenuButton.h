@@ -7,15 +7,17 @@ class MenuButton
 {
 public:
 	MenuButton();
-	MenuButton(std::string t_name, sf::IntRect t_region, bool t_active) :
-		m_name(t_name), m_region(t_region), m_active(t_active) {}
+	MenuButton(std::string t_name, sf::IntRect t_region, bool t_active, int t_funcId) :
+		m_name(t_name), m_region(t_region), m_active(t_active), m_funcId(t_funcId) {}
 	~MenuButton();
 	 
+	
 	void update(float t_dt);
 	void draw(sf::RenderWindow * t_window, float t_dt);
 	void init(std::vector<Animation> t_anims);
 	void setPosition(vec2f t_pos);
 	int clickEvent();
+	int m_funcId;
 	sf::IntRect m_region;
 	vec2f m_position;
 	std::string m_name;

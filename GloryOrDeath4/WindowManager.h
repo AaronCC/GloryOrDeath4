@@ -8,11 +8,12 @@
 class WindowManager
 {
 public:
+	
 	WindowManager();
 	~WindowManager();
 
 	sf::RenderWindow& getWindow() const;
-	
+	std::map<int, Menu::buttFunc> m_buttFuncs;
 	void renderFrame();
 	void renderMenu();
 	GameObject* genObj(std::string name);

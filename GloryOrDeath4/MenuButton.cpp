@@ -51,5 +51,5 @@ void MenuButton::setPosition(vec2f t_pos)
 
 int MenuButton::clickEvent()
 {
-	return 2;
+	return m_funcId;
 }

@@ -152,7 +152,7 @@ std::map<std::string, std::string> Parser::parseButtonData(SpriteManager * t_sm)
 std::map<std::string, MenuButton> Parser::parseButtons(SpriteManager * t_sm)
 {
 	std::map<std::string, MenuButton> buttons;
-	sf::IntRect region;
+	/*sf::IntRect region;
 	bool active;
 	std::stringstream stream;
 	std::string name;
@@ -166,6 +166,6 @@ std::map<std::string, MenuButton> Parser::parseButtons(SpriteManager * t_sm)
 		std::cout << "\t\t" << line << std::endl;
 	}
 	buttonStream.close();
-	std::cout << std::endl;
+	std::cout << std::endl;*/
 	return buttons;
 }
